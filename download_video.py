@@ -28,7 +28,7 @@ def generate_infos():
 def download_video(info):
     link = info["link"]
     filename = info["filename"]
-    os.system(f"youtube-dl -f 0 {link} -o ./video_data/{filename}.mp4")
+    os.system(f"yt-dlp -f bestaudio -o ./video_data/{filename}.mp4 {link} ")
 
 
 if __name__ == "__main__":
