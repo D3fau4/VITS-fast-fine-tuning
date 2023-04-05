@@ -27,6 +27,12 @@ if __name__ == "__main__":
         lang2token = {
             'zh': "[ZH]",
         }
+    elif args.languages == "HOLO":
+        lang2token = {
+            'ja': "[JA]",
+            "en": "[EN]",
+            "es": "[ES]"
+        }
     assert(torch.cuda.is_available()), "Please enable GPU in order to run Whisper!"
     model = whisper.load_model(args.whisper_size)
     speaker_annos = []
