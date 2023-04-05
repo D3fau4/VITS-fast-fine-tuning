@@ -27,7 +27,7 @@ if __name__ == "__main__":
         lang2token = {
             'zh': "[ZH]",
         }
-    elif args.languages == "HOLO":
+    elif args.languages == "KORONE":
         lang2token = {
             'ja': "[JA]",
             "en": "[EN]",
