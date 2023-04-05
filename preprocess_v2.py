@@ -6,14 +6,12 @@ if __name__ == "__main__":
     parser.add_argument("--add_auxiliary_data", type=bool, help="Whether to add extra data as fine-tuning helper")
     parser.add_argument("--languages", default="CJE")
     args = parser.parse_args()
-    if args.languages == "CJE":
+    if args.languages == "CJE" or args.languages == "KORONE":
         langs = ["[ZH]", "[JA]", "[EN]"]
     elif args.languages == "CJ":
         langs = ["[ZH]", "[JA]"]
     elif args.languages == "C":
         langs = ["[ZH]"]
-    elif args.languages == "KORONE":
-        langs = ["[JA]", "[EN]", "[ES]"]
     new_annos = []
     # Source 1: transcribed short audios
     if os.path.exists("short_character_anno.txt"):

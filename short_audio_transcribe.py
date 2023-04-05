@@ -33,7 +33,7 @@ if __name__ == "__main__":
     parser.add_argument("--languages", default="CJE")
     parser.add_argument("--whisper_size", default="medium")
     args = parser.parse_args()
-    if args.languages == "CJE":
+    if args.languages == "CJE" or args.languages == "KORONE":
         lang2token = {
             'zh': "[ZH]",
             'ja': "[JA]",
@@ -48,12 +48,7 @@ if __name__ == "__main__":
         lang2token = {
             'zh': "[ZH]",
         }
-    elif args.languages == "KORONE":
-        lang2token = {
-            'ja': "[JA]",
-            "en": "[EN]",
-            "es": "[ES]"
-        }
+
     assert (torch.cuda.is_available()), "Please enable GPU in order to run Whisper!"
     model = whisper.load_model(args.whisper_size)
     parent_dir = "./custom_character_voice/"
