@@ -1,7 +1,9 @@
 import os
 from pydub import AudioSegment
 from pydub.silence import detect_nonsilent
+
 raw_audio_dir = "./raw_audio/"
+
 
 def dividir_audio_carpeta(carpeta_entrada, max_duration):
     """
@@ -47,6 +49,7 @@ def dividir_audio_carpeta(carpeta_entrada, max_duration):
                                           format="wav")
 
         print(f"Archivo {archivo} procesado correctamente.")
-        os.remove(archivo)
+        os.remove(os.path.join(carpeta_entrada, archivo))
+
 
 dividir_audio_carpeta(raw_audio_dir, 30 * 60)
